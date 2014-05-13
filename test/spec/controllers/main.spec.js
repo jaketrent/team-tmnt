@@ -1,18 +1,21 @@
 'use strict';
 
-describe('Controller: TeamCtrl', function () {
+describe('Controller: MainCtrl', function () {
 
   // load the controller's module
   beforeEach(module('teamTmntApp'));
 
-  var TeamCtrl,
+  var MainCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    TeamCtrl = $controller('TeamCtrl', {
-      $scope: scope
+    scope.awesomeThings = [1, 2, 3]
+
+    MainCtrl = $controller('MainCtrl', {
+      $scope: scope,
+      teams: [{name: 'fakies'}, {name: 'also fake'}],
     });
   }));
 
